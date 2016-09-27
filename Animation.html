@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Traveling</title>
+</head>
+<body>
+
+<nav>
+	<div id="dropButton" onclick="dlith()">Cars
+		<div class="menu-items">
+			<li>Taxi</li>
+			<li>Limo</li>
+			<li>Uber</li>
+			<li>Private Car</li>
+		</div>
+	</div>
+	<div id="dropButton" onclick="dlith()">Public Transportation
+		<div class="menu-items">
+			<li>Bus</li>
+			<li>Subway</li>
+			<li>Monorail</li>
+		</div>
+	</div>
+	<div id="dropButton" onclick="dlith()">Sea Faring
+		<div class="menu-items">
+			<li>Boat</li>
+			<li>Submarine</li>
+			<li>Jet Ski</li>
+		</div>
+	</div>
+</nav>
+
+<br>
+<br>
+<br>
+
+<button type="button" onclick="move()">Roooooom!</button>
+<div id="container">
+
+<div id="animation"><img src="color.png"></div>
+</div>
+
+<style type="text/css">
+	html {
+		background: url("road.jpg");
+		background-size: cover; 
+	}
+	#dropButton{
+		background-color: rgb(192, 219, 234);
+		color: green;
+		border: 2px;
+		display: inline-block;
+		border:groove;
+	}
+	#dropButton:hover {
+		background-color: green;
+		color: rgb(192, 219, 234);
+		border:groove;
+	}
+	.menu-items {
+		display: none;
+		width: 200px;
+		list-style: none;
+		background-color: green; 
+		z-index: 1;
+	}
+	#dropButton:hover .menu-items{
+		display: block;
+		position: absolute;
+	}
+	li:hover, .dropButton:hover .menu-it {
+    background-color: #E6DD3D;
+    display: block;
+	}
+	#container {
+		position: relative;
+	}
+	#animation {
+		position: absolute;
+		margin-top: 25%;
+		width: 200%;
+		height:200%;
+	}
+
+</style>
+
+<script type="text/javascript">
+	function move() {
+		var elem = document.getElementById('animation');
+		var pos = 0;
+		var id = setInterval(frame, 1);//timer
+		function frame() {
+			if (pos == 1000) {//if position is equal to 350, stop animation
+				clearInterval(id);
+			} else{
+				pos++;
+				//elem.style.top = pos + 'px';
+				elem.style.left = pos + 'px';
+				}
+			}
+	}
+
+</script>
+</body>
+</html>
